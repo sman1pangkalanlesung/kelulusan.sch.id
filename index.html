@@ -1,0 +1,566 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes, shrink-to-fit=no">
+  <title>Pengumuman Kelulusan • SMAN 1 Pangkalan Lesung</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background: linear-gradient(145deg, #f5f7fa 0%, #e9edf5 100%);
+      font-family: 'Segoe UI', 'Poppins', system-ui, -apple-system, sans-serif;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-start;
+      padding: 1.2rem 1rem 2.5rem;
+      color: #1e293b;
+    }
+
+    .container {
+      max-width: 580px;
+      width: 100%;
+      background: rgba(255,255,255,0.85);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      background: #ffffff;
+      border-radius: 2.5rem;
+      box-shadow: 0 25px 45px rgba(0,0,0,0.08), 0 10px 20px rgba(0,20,50,0.06);
+      padding: 2rem 1.5rem 2.2rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      transition: all 0.2s ease;
+      border: 1px solid rgba(255,255,255,0.6);
+    }
+
+    /* Logo */
+    .logo-section {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 0.75rem;
+      gap: 0.5rem;
+    }
+
+    .logo-image {
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      object-fit: cover;
+      box-shadow: 0 12px 22px rgba(2, 48, 71, 0.25);
+      border: 3px solid #facc15;
+      transition: transform 0.3s;
+      background: #eaf0f6;
+      display: block;
+    }
+
+    .logo-image:hover {
+      transform: scale(1.02);
+    }
+
+    .upload-btn-small {
+      background: #f0f4fa;
+      border: 1px dashed #7a9bbd;
+      color: #1e4a6e;
+      padding: 0.3rem 1rem;
+      border-radius: 20px;
+      font-size: 0.75rem;
+      cursor: pointer;
+      transition: all 0.2s;
+      font-weight: 500;
+      background: white;
+    }
+
+    .upload-btn-small:hover {
+      background: #e1ebf7;
+      border-color: #1e4a76;
+    }
+
+    /* Nama Sekolah */
+    .school-name {
+      font-size: 2rem;
+      font-weight: 800;
+      text-align: center;
+      color: #0b3b5c;
+      margin: 0.5rem 0 0.3rem;
+      line-height: 1.2;
+      letter-spacing: -0.3px;
+      text-shadow: 0 1px 2px rgba(255,255,255,0.8);
+    }
+
+    .sub-name {
+      font-size: 1rem;
+      font-weight: 500;
+      color: #2c4b6b;
+      background: #e6f0f9;
+      display: inline-block;
+      padding: 0.25rem 1.2rem;
+      border-radius: 30px;
+      margin-bottom: 1.3rem;
+      letter-spacing: 0.4px;
+    }
+
+    /* Foto Guru */
+    .teachers-photo {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      margin: 0.6rem 0 1.2rem;
+      width: 100%;
+      gap: 0.5rem;
+    }
+
+    .single-teacher-photo {
+      width: 100%;
+      max-width: 400px;
+      aspect-ratio: 16 / 9;
+      border-radius: 1.5rem;
+      object-fit: cover;
+      box-shadow: 0 14px 24px rgba(0,0,0,0.2);
+      border: 4px solid white;
+      background: #d9e5f2;
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      transition: transform 0.3s ease;
+      display: block;
+    }
+
+    .single-teacher-photo:hover {
+      transform: scale(1.01);
+    }
+
+    /* Garis pembatas */
+    .divider {
+      width: 80%;
+      height: 3px;
+      background: linear-gradient(to right, transparent, #9bb7d4, #2c5282, #9bb7d4, transparent);
+      border-radius: 5px;
+      margin: 0.8rem 0 1.8rem;
+    }
+
+    /* Judul Pengumuman */
+    .announcement-title {
+      text-align: center;
+      margin-bottom: 1rem;
+      padding: 0.6rem 0.8rem;
+      background: linear-gradient(135deg, #0b3b5c, #1a5276);
+      color: white;
+      border-radius: 1.2rem;
+      width: 100%;
+      box-shadow: 0 6px 14px rgba(2, 48, 71, 0.2);
+    }
+
+    .announcement-title h2 {
+      font-size: 1.25rem;
+      font-weight: 700;
+      letter-spacing: 0.3px;
+      margin: 0;
+      line-height: 1.4;
+    }
+
+    .announcement-title .subtitle {
+      font-size: 0.8rem;
+      font-weight: 400;
+      opacity: 0.9;
+      margin-top: 0.15rem;
+      letter-spacing: 0.5px;
+    }
+
+    /* Kotak pencarian */
+    .search-box {
+      width: 100%;
+      background: #f8fafd;
+      border-radius: 3rem;
+      padding: 0.4rem 0.4rem 0.4rem 1.4rem;
+      display: flex;
+      align-items: center;
+      border: 1.5px solid #cfdfef;
+      background: white;
+      box-shadow: 0 6px 16px rgba(0,32,64,0.07);
+      margin-bottom: 1.4rem;
+      transition: border 0.2s;
+    }
+
+    .search-box:focus-within {
+      border-color: #1e4a76;
+      box-shadow: 0 0 0 4px rgba(30,74,118,0.15);
+    }
+
+    .search-box input {
+      flex: 1;
+      border: none;
+      padding: 0.8rem 0.4rem;
+      font-size: 1rem;
+      background: transparent;
+      outline: none;
+      color: #0c2d44;
+      font-weight: 500;
+    }
+
+    .search-box input::placeholder {
+      color: #8aa1b9;
+      font-weight: 400;
+      font-size: 0.95rem;
+    }
+
+    .search-box button {
+      background: #0c3f5e;
+      border: none;
+      color: white;
+      font-weight: 600;
+      padding: 0.7rem 1.6rem;
+      border-radius: 2.5rem;
+      font-size: 0.95rem;
+      letter-spacing: 0.4px;
+      background: linear-gradient(135deg, #1a4b6e, #072c41);
+      cursor: pointer;
+      transition: all 0.2s;
+      box-shadow: 0 6px 12px rgba(2,48,71,0.3);
+      border: 1px solid #facc1550;
+    }
+
+    .search-box button:hover {
+      background: linear-gradient(135deg, #1f5880, #0a3852);
+      box-shadow: 0 8px 16px rgba(2,48,71,0.4);
+    }
+
+    .result-area {
+      width: 100%;
+      min-height: 95px;
+      margin: 0.5rem 0 1.2rem;
+      background: #f4f9ff;
+      border-radius: 1.8rem;
+      padding: 1.2rem 1rem;
+      text-align: center;
+      border: 1px dashed #97b9da;
+      background: #f0f6fe;
+      transition: 0.3s;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .student-name {
+      font-size: 1.6rem;
+      font-weight: 700;
+      color: #003153;
+      margin-bottom: 0.5rem;
+      word-break: break-word;
+    }
+
+    .graduation-message {
+      font-size: 1.1rem;
+      font-weight: 600;
+      color: #0f5c3b;
+      background: #e3f5e9;
+      padding: 0.4rem 1.4rem;
+      border-radius: 2rem;
+      display: inline-block;
+      letter-spacing: 0.3px;
+      opacity: 0;
+      transition: opacity 0.4s ease;
+    }
+
+    .graduation-message.show {
+      opacity: 1;
+    }
+
+    .word-by-word {
+      display: inline-block;
+      margin-right: 4px;
+    }
+
+    .error-message {
+      color: #b22234;
+      font-weight: 500;
+      background: #ffe6e8;
+      padding: 0.4rem 1.2rem;
+      border-radius: 20px;
+    }
+
+    /* Foto SK */
+    .sk-card {
+      width: 100%;
+      margin-top: 0.8rem;
+      background: #ffffff;
+      border-radius: 1.8rem;
+      overflow: hidden;
+      box-shadow: 0 14px 24px rgba(0,0,0,0.12);
+      border: 1px solid #cdddec;
+    }
+
+    .sk-image {
+      width: 100%;
+      height: auto;
+      display: block;
+      object-fit: cover;
+      background: #eef3f9;
+      aspect-ratio: 16 / 11;
+      background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 280" fill="%23dee7f2"><rect width="400" height="280" fill="%23eaf0f6"/><text x="200" y="150" font-size="20" font-weight="bold" text-anchor="middle" fill="%2332567b">SK KELULUSAN</text><text x="200" y="180" font-size="14" text-anchor="middle" fill="%23405c7a">SMAN 1 Pangkalan Lesung</text></svg>');
+      background-size: cover;
+      background-position: center;
+    }
+
+    .sk-caption {
+      padding: 0.7rem 1rem;
+      font-size: 0.9rem;
+      color: #2c4858;
+      background: #fafcff;
+      text-align: center;
+      font-weight: 500;
+      border-top: 1px solid #dce5f0;
+    }
+
+    /* Sembunyikan input file */
+    .hidden-file-input {
+      display: none;
+    }
+
+    @media (max-width: 480px) {
+      .container {
+        padding: 1.5rem 1.2rem 1.8rem;
+      }
+      .school-name {
+        font-size: 1.7rem;
+      }
+      .single-teacher-photo {
+        max-width: 100%;
+        aspect-ratio: 4 / 3;
+      }
+      .logo-image {
+        width: 85px;
+        height: 85px;
+      }
+      .announcement-title h2 {
+        font-size: 1.05rem;
+      }
+      .announcement-title .subtitle {
+        font-size: 0.7rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <!-- 1. Logo (bisa upload) -->
+    <div class="logo-section">
+      <img 
+        id="logoImage" 
+        src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><circle cx='50' cy='50' r='48' fill='%231e5a8a'/><text x='50' y='62' font-size='40' text-anchor='middle' fill='white' font-weight='bold'>📘</text></svg>"
+        alt="Logo Sekolah"
+        class="logo-image"
+      >
+      <label for="logoUpload" class="upload-btn-small">📷 Upload Logo</label>
+      <input type="file" id="logoUpload" class="hidden-file-input" accept="image/*">
+    </div>
+
+    <!-- 2. Nama Sekolah -->
+    <div class="school-name">SMAN 1</div>
+    <div class="sub-name">Pangkalan Lesung</div>
+
+    <!-- 3. Foto Para Guru (bisa upload) -->
+    <div class="teachers-photo">
+      <img 
+        id="teacherPhoto" 
+        src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 225' fill='%23dee7f2'><rect width='400' height='225' fill='%23eaf0f6'/><text x='200' y='90' font-size='16' font-weight='bold' text-anchor='middle' fill='%2332567b'>FOTO PARA GURU</text><text x='200' y='120' font-size='13' text-anchor='middle' fill='%23405c7a'>🖼️ Klik upload untuk ganti foto</text></svg>"
+        alt="Foto Para Guru SMAN 1 Pangkalan Lesung"
+        class="single-teacher-photo"
+      >
+      <label for="teacherUpload" class="upload-btn-small">📷 Upload Foto Guru</label>
+      <input type="file" id="teacherUpload" class="hidden-file-input" accept="image/*">
+    </div>
+
+    <!-- 4. Pembatas garis -->
+    <div class="divider"></div>
+
+    <!-- 🆕 JUDUL PENGUMUMAN (diatas kotak pencarian) -->
+    <div class="announcement-title">
+      <h2>📢 Pengumuman Kelulusan 2026</h2>
+      <div class="subtitle">SMAN 1 Pangkalan Lesung • Provinsi Riau</div>
+    </div>
+
+    <!-- 5. Kotak Pencarian NISN -->
+    <div class="search-box">
+      <input type="text" id="nisnInput" placeholder="Masukkan NISN (contoh: 12345)" inputmode="numeric" autocomplete="off">
+      <button id="searchBtn">🔍 Cari</button>
+    </div>
+
+    <!-- Area hasil pencarian -->
+    <div class="result-area" id="resultArea">
+      <span style="color:#5b6f87; font-size:0.9rem;">✨ Ketik NISN lalu tekan cari</span>
+    </div>
+
+    <!-- 6. Foto SK Kelulusan -->
+    <div class="sk-card">
+      <div class="sk-image" aria-label="Scan SK Kelulusan"></div>
+      <div class="sk-caption">📄 Surat Keputusan Kelulusan · 2026</div>
+    </div>
+  </div>
+
+  <script>
+    (function() {
+      // ========== DATA SISWA ==========
+      const studentData = {
+        "12345": "Aisyah Putri Ramadhani",
+        "12346": "Bima Adi Nugroho",
+        "12347": "Citra Lestari",
+        "12348": "Dimas Satria Wibowo",
+        "12349": "Eka Novitasari",
+        "12350": "Fajar Prasetyo",
+        "11111": "Rizky Maulana",
+        "22222": "Salsabila Azzahra"
+      };
+
+      // ========== ELEMEN DOM ==========
+      const nisnInput = document.getElementById('nisnInput');
+      const searchBtn = document.getElementById('searchBtn');
+      const resultArea = document.getElementById('resultArea');
+      
+      // Upload logo
+      const logoUpload = document.getElementById('logoUpload');
+      const logoImage = document.getElementById('logoImage');
+      
+      // Upload foto guru
+      const teacherUpload = document.getElementById('teacherUpload');
+      const teacherPhoto = document.getElementById('teacherPhoto');
+
+      // ========== FUNGSI UPLOAD LOGO ==========
+      logoUpload.addEventListener('change', function(event) {
+        const file = event.target.files[0];
+        if (file) {
+          const reader = new FileReader();
+          reader.onload = function(e) {
+            logoImage.src = e.target.result;
+            // Simpan ke localStorage (opsional, agar tidak hilang saat refresh)
+            try {
+              localStorage.setItem('schoolLogo', e.target.result);
+            } catch (err) {
+              console.log('Gambar logo terlalu besar untuk disimpan permanen.');
+            }
+          };
+          reader.readAsDataURL(file);
+        }
+      });
+
+      // ========== FUNGSI UPLOAD FOTO GURU ==========
+      teacherUpload.addEventListener('change', function(event) {
+        const file = event.target.files[0];
+        if (file) {
+          const reader = new FileReader();
+          reader.onload = function(e) {
+            teacherPhoto.src = e.target.result;
+            // Simpan ke localStorage (opsional)
+            try {
+              localStorage.setItem('teacherPhoto', e.target.result);
+            } catch (err) {
+              console.log('Gambar guru terlalu besar untuk disimpan permanen.');
+            }
+          };
+          reader.readAsDataURL(file);
+        }
+      });
+
+      // ========== MUAT GAMBAR DARI LOCALSTORAGE (JIKA ADA) ==========
+      function loadSavedImages() {
+        try {
+          const savedLogo = localStorage.getItem('schoolLogo');
+          if (savedLogo) {
+            logoImage.src = savedLogo;
+          }
+          
+          const savedTeacher = localStorage.getItem('teacherPhoto');
+          if (savedTeacher) {
+            teacherPhoto.src = savedTeacher;
+          }
+        } catch (err) {
+          console.log('Tidak dapat memuat gambar tersimpan.');
+        }
+      }
+
+      // Panggil saat halaman dimuat
+      loadSavedImages();
+
+      // ========== FUNGSI PENCARIAN NISN ==========
+      function displayGraduationMessage(studentName) {
+        resultArea.innerHTML = '';
+        
+        const nameDiv = document.createElement('div');
+        nameDiv.className = 'student-name';
+        nameDiv.textContent = studentName;
+        resultArea.appendChild(nameDiv);
+
+        const messageContainer = document.createElement('div');
+        messageContainer.className = 'graduation-message';
+        resultArea.appendChild(messageContainer);
+
+        const fullSentence = "selamat anda lulus dari SMAN 1 Pangkalan Lesung";
+        const words = fullSentence.split(' ');
+        let wordIndex = 0;
+        
+        setTimeout(() => {
+          messageContainer.classList.add('show');
+        }, 50);
+
+        function appendNextWord() {
+          if (wordIndex < words.length) {
+            const wordSpan = document.createElement('span');
+            wordSpan.className = 'word-by-word';
+            wordSpan.textContent = words[wordIndex];
+            messageContainer.appendChild(wordSpan);
+            wordIndex++;
+            setTimeout(appendNextWord, 320);
+          }
+        }
+
+        appendNextWord();
+      }
+
+      function showError(message) {
+        resultArea.innerHTML = `<div class="error-message">⚠️ ${message}</div>`;
+      }
+
+      function handleSearch() {
+        const nisnRaw = nisnInput.value.trim();
+        
+        if (nisnRaw === '') {
+          showError('NISN tidak boleh kosong.');
+          return;
+        }
+
+        const studentName = studentData[nisnRaw];
+        
+        if (studentName) {
+          displayGraduationMessage(studentName);
+        } else {
+          showError('NISN tidak ditemukan. Silakan coba lagi.');
+        }
+      }
+
+      searchBtn.addEventListener('click', handleSearch);
+
+      nisnInput.addEventListener('keypress', function(e) {
+        if (e.key === 'Enter') {
+          e.preventDefault();
+          handleSearch();
+        }
+      });
+
+      console.log('✅ Website Pengumuman Kelulusan 2026 siap!');
+      console.log('📷 Klik "Upload Logo" untuk mengganti logo sekolah.');
+      console.log('📷 Klik "Upload Foto Guru" untuk mengganti foto para guru.');
+      console.log('💾 Gambar yang diupload akan disimpan otomatis.');
+    })();
+  </script>
+</body>
+</html>

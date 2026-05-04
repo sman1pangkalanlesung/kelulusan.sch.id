@@ -398,40 +398,29 @@
 <body>
   <div class="container">
     
-    <!-- 1. Dua Logo Bersebelahan dengan Ukuran Berbeda -->
     <div class="logo-container">
-      
-      <!-- Logo Kiri (Lebih Besar) -->
       <div class="logo-item left">
-        <!-- 🖼️ GANTI src dengan logo pertama -->
         <img src="f8e6ecfffeec0006740517c52a6c6424-removebg-preview.png" 
              alt="Logo Sekolah" 
              onerror="this.onerror=null; this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22%3E%3Ccircle cx=%2250%22 cy=%2250%22 r=%2245%22 fill=%22%234285d1%22/%3E%3Ctext x=%2250%22 y=%2265%22 font-size=%2245%22 text-anchor=%22middle%22 fill=%22white%22%3E🏫%3C/text%3E%3C/svg%3E';">
         <span class="logo-label"></span>
       </div>
 
-      <!-- Garis pemisah vertikal -->
       <div class="logo-divider"></div>
 
-      <!-- Logo Kanan (Lebih Kecil) -->
       <div class="logo-item right">
-        <!-- 🖼️ GANTI src dengan logo kedua -->
         <img src="Logo_SMAN_1_PKL_Lesung_HD_ (1).png" 
              alt="Logo Kedua" 
              onerror="this.onerror=null; this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22%3E%3Ccircle cx=%2250%22 cy=%2250%22 r=%2245%22 fill=%22%23f59e0b%22/%3E%3Ctext x=%2250%22 y=%2265%22 font-size=%2245%22 text-anchor=%22middle%22 fill=%22white%22%3E🎓%3C/text%3E%3C/svg%3E';">
         <span class="logo-label"></span>
       </div>
-      
     </div>
 
-    <!-- 2. Nama Sekolah -->
     <div class="school-name">
       <i class=""></i> SMA NEGERI 1 PANGKALAN LESUNG
     </div>
 
-    <!-- 3. Foto Para Guru - 1 Foto Besar -->
     <div class="teachers-photo">
-      <!-- ⚠️ GANTI src dengan foto guru kamu -->
       <img src="KAM02367.JPG" 
            alt="Foto Para Guru" 
            class="single-teacher-photo"
@@ -439,10 +428,8 @@
            onerror="this.onerror=null; this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22400%22 height=%22300%22%3E%3Crect width=%22400%22 height=%22300%22 fill=%22%23e2e8f0%22/%3E%3Ctext x=%22200%22 y=%22160%22 font-size=%2220%22 text-anchor=%22middle%22 fill=%22%23475569%22%3EFoto Guru%3C/text%3E%3C/svg%3E';">
     </div>
 
-    <!-- 4. Garis Pembatas -->
     <div class="divider"></div>
 
-    <!-- 5. Countdown Timer Besar -->
     <div class="timer-title" id="timerTitle">
       <i class="far fa-clock"></i> PENGUMUMAN KELULUSAN TINGGAL
     </div>
@@ -468,17 +455,15 @@
 
     <div class="target-info" id="targetInfo">
       <i class="fas fa-calendar-check"></i> 
-      <span id="targetDateDisplay">4 Mei 2026, 15:00 WIB</span>
+      <span id="targetDateDisplay">4 Mei 2026, 20:30 WIB</span>
     </div>
 
-    <!-- Pesan Selamat -->
     <div class="congrats-message" id="congratsMessage">
       <i class="fas fa-party-horn"></i> Selamat! Pengumuman telah tiba! 🎉
     </div>
 
-    <!-- Tombol Link Website Utama -->
     <div class="announcement-link-wrapper" id="announcementLinkWrapper">
-      <a href="https://www.sekolahimpian.sch.id/pengumuman" 
+      <a href="https://sman1pangkalanlesung.github.io/kelulusan..sch.id/" 
          target="_blank" 
          rel="noopener noreferrer" 
          class="announcement-link">
@@ -496,8 +481,11 @@
       // KONFIGURASI
       // ============================================
       
-      const targetUTC = Date.UTC(2026, 4, 4, 8, 0, 0);
-      const websiteURL = "https://www.sekolahimpian.sch.id/pengumuman";
+      // 📅 Tanggal target: 4 Mei 2026, 20:30 WIB (jam 8.30 malam)
+      // WIB = UTC+7 → 20:30 - 7 jam = 13:30 UTC
+      const targetUTC = Date.UTC(2026, 4, 4, 13, 30, 0);
+      
+      const websiteURL = "https://sman1pangkalanlesung.github.io/kelulusan..sch.id/";
       const buttonText = "Lihat Pengumuman Kelulusan";
       
       const announcementLink = document.querySelector('.announcement-link');
@@ -508,7 +496,7 @@
       
       const targetDisplayElement = document.getElementById('targetDateDisplay');
       if (targetDisplayElement) {
-        targetDisplayElement.textContent = '4 Mei 2026, 15:00 WIB';
+        targetDisplayElement.textContent = '4 Mei 2026, 20:30 WIB';
       }
 
       const daysElement = document.getElementById('days');
